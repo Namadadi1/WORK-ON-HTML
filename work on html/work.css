@@ -1,0 +1,23 @@
+body {
+    color: whitesmoke;
+    background-color: coral;
+
+}
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 50px;
+    text-align: center;
+    width: 70%;
+}
+img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+    align: center;
+}

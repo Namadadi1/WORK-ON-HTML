@@ -1,0 +1,81 @@
+body {
+    background-color: #11092c;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    color: whitesmoke;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+    font-size: large;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    font-size: large;
+    font-family: comic-sans-ms, sans-serif !important;
+    font-weight: 700;
+    font-style: normal;
+}
+table {
+    width: 80%;  /* Reduced from 100% to allow centering */
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px auto;  /* Changed margin to auto for horizontal centering */
+    border-radius: 8px;
+    table-layout: auto;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;  /* Added max-width for larger screens */
+    font-size: large;
+    font-family: comic-sans-ms, sans-serif !important;
+    font-weight: 700;
+    font-style: normal;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+}
+
+th {
+    background-color: #444;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
+tr:hover {
+    background-color: #454545;
+    transition: background-color 0.2s ease;
+}
+p, table, body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.125rem;  /* 18px - more precise than 'large' */
+    font-weight: 500;     /* medium weight for better readability */
+    font-style: normal;
+    letter-spacing: -0.01em;
+}
+a {
+    color: #4CAF50;  /* Green color for links */
+    text-decoration: none;  /* No underline */
+    font-weight: 600;  /* Bold links */
+    transition: color 0.3s ease;  /* Smooth color transition */
+    button {
+        background-color: #4CAF50;  /* Green background for buttons */
+        color: white;  /* White text for buttons */
+        padding: 10px 20px;  /* Padding for buttons */
+        border: none;  /* No border */
+        border-radius: 5px;  /* Rounded corners for buttons */
+        cursor: pointer;  /* Pointer cursor on hover */
+        font-size: 1rem;  /* Font size for buttons */
+        font-weight: 600;  /* Bold text for buttons */
+        transition: background-color 0.3s ease;  /* Smooth background color transition */
+    }
+}
