@@ -22,6 +22,10 @@
                 <li>
                     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN Web Docs</a>
                 </li>
+                </li>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN Web Docs</a>
+                </li>
             </ul>
         </nav>
         
@@ -32,6 +36,11 @@
                 </li>
                 <li>
                     <a href="#vacation">Planning a vacation</a>    
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#contact">Contact Me</a>
                 </li>
             </ul>
         </nav>
@@ -167,10 +176,10 @@
                     <time datetime="12:00">12pm</time>
                     -<time datetime="17:00">5pm</time>
                   </td>
-                   <td>Study for other courses</td>
+                   <td>Study for snake courses</td>
                 </tr>
                 <tr>
-                    <td rowspan="2">All Other Times</td>
+                    <td rowspan="2">All snake Times</td>
                     <td>Free Time</td>
                 </tr>
                 <th scope="row">Night</th>
@@ -190,6 +199,135 @@
             <br>
             <p>this is one of my earlier pages</p>
             <p>this is one of my earlier pages</p>
+        </article>
+        <hr>
+
+        <article id="contact">
+            <h2>Contact Me</h2>
+            <p>I'd really like to hear from you!</p>
+
+            <form action="https://httpbin.org/get" method="get">
+                <fieldset>
+                    <legend>Personal Info</legend>
+                <p>
+                <label for="firstName">First Name:</label>
+                <input type="text" 
+                name="firstName" id="firstName" 
+                placeholder="Jane"
+                 autocomplete="on" 
+                 required autofocus>
+                </p>
+                <p>
+                <label for="lastName">last Name:</label>
+                <input type="text" 
+                name="lastName" id="lastName" 
+                placeholder="Doe"
+                 autocomplete="on" 
+                 required>
+                </p>
+                <p>
+                <label for="password">Password:</label>
+                <input type="password" 
+                name="password" id="password" 
+                placeholder="******"
+                required>
+                </p>
+                <p>
+                <label for="phone">Phone:</label>
+                <input type="tel" 
+                name="phone" id="phone" 
+                placeholder="555-555-5555" 
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required>
+                </p>
+                <p>
+                <label for="decade">Favorute Decade:</label>
+                <input type="number" 
+                name="decade" id="decade" 
+                min="1950" max="2025" step="10" value="1980">
+                </p>
+                <p>
+                    <label for="coffee">Favorite Coffee</label>
+                    <select name="coffee" id="coffee" multiple size="5">
+                        <optgroup label="coffees">
+                        <option value="espresso">Espresso</option>
+                        <option value="americano">Americano</option>
+                        <option value="latte">Latte</option>
+                        </optgroup>
+                        <optgroup label="specialty coffees">
+                        <option value="cappuccino">Cappuccino</option>
+                        <option value="mocha">Mocha</option>
+                        <option value="macchiato">Macchiato</option>
+                        </optgroup>
+                    </select>
+                </p>
+               <!--  <p>
+                    <label for="coffee">Favorite Coffee</label>
+                    <input type="text" name="coffee" id="coffee" list="coffees">
+                    <datalist id="coffee-list">
+                        <option value="Espresso">
+                        <option value="Americano">
+                        <option value="Latte">
+                        <option value="Cappuccino">
+                        <option value="Mocha">
+                        <option value="Macchiato">
+                        <option value="snake">
+                    </datalist>
+                </p> -->
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>What is your favorite food?</legend>
+                <p>
+                <label><input type="radio" name="food" id="taco" 
+                    value="tacos">Tacos</label>
+                </p>
+                <p>
+                <label><input type="radio" name="food" id="pizza" 
+                    value="pizza">Pizza</label>
+                </p>
+            </fieldset>
+            <br>
+                <fieldset>
+                    <legend>Do you have pets?</legend>
+                    <p>
+                    <label><input type="checkbox" name="pets" id="dog" 
+                        value="dog">Dog</label>
+                    </p>
+                    <p>
+                    <label><input type="checkbox" name="pets" id="cat" 
+                        value="cat">cat</label>
+                    </p>
+                    <p>
+                    <label><input type="checkbox" name="pets" id="fish" 
+                        value="fish">fish</label>
+                    </p>
+                    <p>
+                    <label><input type="checkbox" name="pets" id="pig" 
+                        value="pig">Pig</label>
+                    </p>
+                    <p>
+                    <label><input type="checkbox" name="pets" id="snake" 
+                        value="snake">Snake</label>
+                    </p>
+                    <p>
+                    <label><input type="checkbox" name="pets" id="other" 
+                        value="other">Other</label>
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Send me a Note</legend>
+                    <label for="message">Your Message:</label>
+                    <br>
+                    <textarea name="message" id="message" rows="10" cols="30" placeholder="Type yoyr message here "></textarea>
+                </fieldset> 
+                <br>
+                
+                <button type="submit">Submit</button>
+                <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Post</button>
+                <button type="reset">Reset</button>
+            </form>
         </article>
     </main>
     
