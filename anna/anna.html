@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Anna's personal blog sharing her thoughts on writing, creativity, and life."
+    />
+    <meta name="author" content="Anna" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap"
+    />
+    <title>Anna's Writing Blog</title>
+    <style>
+      /* Reset and base styles */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Lora', serif;
+          background: linear-gradient(135deg, #fdfbf8 0%, #f9f5f1 100%);
+          color: #5a5247;
+          line-height: 1.7;
+          padding: 0;
+          min-height: 100vh;
+      }
+
+      .container {
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 0 20px;
+      }
+
+      /* Header styles */
+      header {
+          text-align: center;
+          margin: 40px 0;
+          padding: 40px 0;
+          position: relative;
+      }
+
+      header::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 3px;
+          background: linear-gradient(to right, transparent, #d6c9b8, transparent);
+      }
+
+      .header-content {
+          position: relative;
+      }
+
+      h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: 3.2rem;
+          color: #7a6f5b;
+          margin-bottom: 15px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+      }
+
+      .tagline {
+          font-style: italic;
+          color: #9d8e7a;
+          font-size: 1.3rem;
+          margin-top: 10px;
+          position: relative;
+          display: inline-block;
+      }
+
+      .tagline::after {
+          content: "✦";
+          margin-left: 10px;
+          color: #d6c9b8;
+      }
+
+      /* Author image section */
+      .author-section {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+          margin: 40px 0;
+          flex-wrap: wrap;
+      }
+
+      .author-image {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 5px solid #f0e6d9;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .author-bio {
+          max-width: 500px;
+          background: rgba(255, 255, 255, 0.8);
+          padding: 25px;
+          border-radius: 12px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Intro section */
+      .intro {
+          margin-bottom: 50px;
+          padding: 30px;
+          background-color: rgba(255, 255, 255, 0.7);
+          border-radius: 12px;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+          position: relative;
+          overflow: hidden;
+      }
+
+      .intro::before {
+          content: """;
+          position: absolute;
+          top: -20px;
+          left: -20px;
+          font-size: 120px;
+          color: rgba(214, 201, 184, 0.2);
+          font-family: 'Playfair Display', serif;
+          transform: rotate(15deg);
+      }
+
+      .intro-content {
+          position: relative;
+          z-index: 1;
+      }
+
+      .intro p {
+          font-size: 1.2rem;
+          text-align: center;
+          line-height: 1.8;
+          color: #6b6150;
+      }
+
+      /* Featured posts section */
+      .featured-posts {
+          margin-top: 40px;
+      }
+
+      h2 {
+          color: #7a6f5b;
+          font-family: 'Playfair Display', serif;
+          font-weight: 600;
+          margin-bottom: 30px;
+          text-align: center;
+          font-size: 2.2rem;
+          position: relative;
+          padding-bottom: 15px;
+      }
+
+      h2::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 60px;
+          height: 2px;
+          background: linear-gradient(to right, #d6c9b8, #a58f76, #d6c9b8);
+      }
+
+      /* Post styles */
+      .post {
+          margin-bottom: 40px;
+          padding: 30px;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 12px;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          position: relative;
+          overflow: hidden;
+      }
+
+      .post::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 5px;
+          height: 100%;
+          background: linear-gradient(to bottom, #d6c9b8, #a58f76);
+      }
+
+      .post:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .post-image {
+          height: 200px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .post h3 {
+          color: #7a6f5b;
+          margin-bottom: 15px;
+          font-family: 'Playfair Display', serif;
+          font-size: 1.6rem;
+          position: relative;
+          display: inline-block;
+      }
+
+      .post h3::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 40px;
+          height: 2px;
+          background-color: #d6c9b8;
+          transition: width 0.3s ease;
+      }
+
+      .post:hover h3::after {
+          width: 100%;
+      }
+
+      .post p {
+          margin-bottom: 20px;
+          color: #6b6150;
+          line-height: 1.7;
+      }
+
+      .read-more {
+          display: inline-block;
+          color: #9d8e7a;
+          text-decoration: none;
+          font-weight: 600;
+          position: relative;
+          padding-right: 20px;
+          transition: color 0.3s ease;
+      }
+
+      .read-more::after {
+          content: "→";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: transform 0.3s ease;
+      }
+
+      .read-more:hover {
+          color: #7a6f5b;
+      }
+
+      .read-more:hover::after {
+          transform: translate(5px, -50%);
+      }
+
+      /* Footer styles */
+      footer {
+          text-align: center;
+          margin-top: 70px;
+          padding: 30px 0;
+          border-top: 1px solid rgba(214, 201, 184, 0.5);
+          color: #9d8e7a;
+          font-size: 0.9rem;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+          .container {
+              padding: 0 15px;
+          }
+
+          h1 {
+              font-size: 2.5rem;
+          }
+
+          .tagline {
+              font-size: 1.1rem;
+          }
+
+          .author-section {
+              flex-direction: column;
+              text-align: center;
+          }
+
+          .intro p {
+              font-size: 1.1rem;
+          }
+
+          .post {
+              padding: 20px;
+          }
+
+          .post-image {
+              height: 160px;
+          }
+      }
+
+      @media (max-width: 480px) {
+          h1 {
+              font-size: 2rem;
+          }
+
+          h2 {
+              font-size: 1.8rem;
+          }
+
+          .post h3 {
+              font-size: 1.4rem;
+          }
+
+          .author-image {
+              width: 150px;
+              height: 150px;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <h1>Anna's Writing Corner</h1>
+          <p class="tagline">
+            Thoughts, stories, and reflections from a writer's journey
+          </p>
+        </div>
+      </header>
+
+      <!-- Author section with image -->
+      <div class="author-section">
+        <!-- Replace with your own image path -->
+        <img src="img/iddi.jpeg" alt="Anna - Writer" class="author-image" />
+        <div class="author-bio">
+          <h3>About Anna</h3>
+          <p>
+            Anna is a passionate writer with over 10 years of experience in
+            creative writing and storytelling. She finds inspiration in everyday
+            life and believes in the transformative power of words.
+          </p>
+        </div>
+      </div>
+
+      <section class="intro">
+        <div class="intro-content">
+          <p>
+            Hello and welcome! I'm Anna, a writer passionate about exploring the
+            human experience through words. Here you'll find my musings on life,
+            writing process, and occasional excerpts from my works. I believe in
+            the power of stories to connect us all, and I'm so glad you've
+            stopped by.
+          </p>
+        </div>
+      </section>
+
+      <section class="featured-posts">
+        <h2>Recent Writings</h2>
+
+        <div class="post">
+          <img src="" alt="writer" />
+          <div
+            class="post-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80');
+            "
+          ></div>
+          <h3>The Silence Between Words</h3>
+          <p>
+            Sometimes what we don't say speaks louder than our carefully crafted
+            sentences. In this piece, I explore the power of silence in
+            storytelling and how what's left unsaid can often be the most
+            powerful element of narrative.
+          </p>
+          <a href="#" class="read-more">Continue reading</a>
+        </div>
+
+        <div class="post">
+          <!-- Replace with your own image path -->
+          <div
+            class="post-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=998&q=80');
+            "
+          ></div>
+          <h3>Morning Pages: A Writer's Ritual</h3>
+          <p>
+            For years I've maintained the practice of writing three pages every
+            morning. This isn't about producing content, but about clearing the
+            mental clutter. Here's how this simple practice has transformed my
+            writing process.
+          </p>
+          <a href="#" class="read-more">Continue reading</a>
+        </div>
+
+        <div class="post">
+          <!-- Replace with your own image path -->
+          <img src="img/cozy-writing-nook-stockcake.jpg" alt="damammur" />
+          <div
+            class="post-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1433883669848-fa8a7ce07073?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1197&q=80');
+            "
+          ></div>
+          <h3>Finding Characters in Unexpected Places</h3>
+          <p>
+            The woman who always orders tea with exactly two sugars, the man who
+            feeds pigeons every Tuesday—these everyday people become the seeds
+            of characters in my stories. Join me as I discuss how observation
+            fuels character creation.
+          </p>
+          <a href="#" class="read-more">Continue reading</a>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2023 Anna's Writing Blog | All words are my own</p>
+      </footer>
+    </div>
+  </body>
+</html>
